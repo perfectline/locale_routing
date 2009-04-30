@@ -15,14 +15,13 @@ No routes have to be changed to use this functionality.
 
 ## Configuration
 
-To enable or disable the locale routing set Perfectline::LocaleRouting.enabled = true/false # defaults to true      
-To specifiy which part of the URL should be matched for the locale identifier, set Perfectline::LocaleRouting.match_from = option
+To enable or disable the locale routing set **Perfectline::LocaleRouting.enabled = true/false** # defaults to true
+To specifiy which part of the URL should be matched for the locale identifier, set **Perfectline::LocaleRouting.match_from = option**
 
 ### Available options for match_from are:
 *   :params
     Searches for a 2 letter locale string in the parameters, specifically in the first query stirng token.
     Found token is matched against I18n.available_locales and if no such locale exists, it will fall back to the default locale.
-    Example: www.myhost.com/en/foo/bar
 
     Example:
         www.myapp.com resolves to root controller with the default locale
@@ -34,7 +33,7 @@ To specifiy which part of the URL should be matched for the locale identifier, s
     Searches for configured matches in the domain name. If a match is found, the configured locale is then checked against I18n.available_locales.
     If the configured locale does not exist in available locales, it will fall back to the default locale.
 
-    Configuring host to locale mappings is done via Perfectline::LocaleRouting.create_mapping = hash.
+    Configuring host to locale mappings is done via **Perfectline::LocaleRouting.create_mapping = hash**.
     Hash key must be the hostname pattern to be matched and value is the locale string.
     Hostname patterns are like simplified regexp patterns with * wildcard support.
     Mappings matching is similar to route config - first match found is used, rest is ignored.
@@ -53,11 +52,11 @@ As you can see there are no tests yet either, although they will be created as s
 So if you do run into issues or have any improvement ideas, feel free to contact the authors.
 
 ## Honorable mentions
-This plugin is heavily inspired by the "routing-filter" plugin by Sven Fuchs.
+This plugin is heavily inspired by the "routing-filter" plugin by **Sven Fuchs**.
 
 ## Authors:
-Tanel Suurhans - tanel.suurhans__at__perfectline__d0t__ee
-Tarmo Lehtpuu - tarmo.lehtpuu__at__perfectline__d0t_ee
+Tanel Suurhans - tanel.suurhans_at_perfectline_d0t_ee
+Tarmo Lehtpuu - tarmo.lehtpuu_at_perfectline_d0t_ee
 
 ## License
-Copyright 2009 by PerfectLine LLC (www.perfectline.co.uk) and is released under the MIT license.
+Copyright 2009 by PerfectLine LLC (<www.perfectline.co.uk>) and is released under the MIT license.
