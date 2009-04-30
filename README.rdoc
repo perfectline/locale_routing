@@ -27,19 +27,19 @@ Perfectline::LocaleRouting.match_from = option
 
 Available options for match_from are:
 * :params
-    Searches for a 2 letter locale string in the parameters, specifically in the first query stirng token.
-    Found token is matched against I18n.available_locales and if no such locale exists, it will fall back to the default locale.
-    Example: www.myhost.com/en/foo/bar
+  Searches for a 2 letter locale string in the parameters, specifically in the first query stirng token.
+  Found token is matched against I18n.available_locales and if no such locale exists, it will fall back to the default locale.
+  Example: www.myhost.com/en/foo/bar
 
-Example:
+  * Example:
     www.myapp.com resolves to root controller with the default locale
     www.myapp.com/en resolves to root controller with locale => "en"
     www.myapp.com/foo/bar resolves to "foo" controller, "bar" action with default locale
     www.myapp.com/fr/foo/bar resolves to "foo" controller, "bar" action with locale => "fr"
 
 * :host
-    Searches for configured matches in the domain name. If a match is found, the configured locale is then checked against I18n.available_locales.
-    If the configured locale does not exist in available locales, it will fall back to the default locale.
+  Searches for configured matches in the domain name. If a match is found, the configured locale is then checked against I18n.available_locales.
+  If the configured locale does not exist in available locales, it will fall back to the default locale.
 
 Configuring host to locale mappings is done via Perfectline::LocaleRouting.create_mapping = hash.
 Hash key must be the hostname pattern to be matched and value is the locale string.
