@@ -13,22 +13,22 @@ This parameter defaults to I18n.locale.
 
 No routes have to be changed to use this functionality.
 
-# Configuration
+## Configuration
 
-To enable or disable the locale routing set Perfectline::LocaleRouting.enabled = true/false # defaults to true
+To enable or disable the locale routing set Perfectline::LocaleRouting.enabled = true/false # defaults to true      
 To specifiy which part of the URL should be matched for the locale identifier, set Perfectline::LocaleRouting.match_from = option
 
-## Available options for match_from are:
+### Available options for match_from are:
 *   :params
     Searches for a 2 letter locale string in the parameters, specifically in the first query stirng token.
     Found token is matched against I18n.available_locales and if no such locale exists, it will fall back to the default locale.
     Example: www.myhost.com/en/foo/bar
 
     Example:
-    www.myapp.com resolves to root controller with the default locale
-    www.myapp.com/en resolves to root controller with locale => "en"
-    www.myapp.com/foo/bar resolves to "foo" controller, "bar" action with default locale
-    www.myapp.com/fr/foo/bar resolves to "foo" controller, "bar" action with locale => "fr"
+        www.myapp.com resolves to root controller with the default locale
+        www.myapp.com/en resolves to root controller with locale => "en"
+        www.myapp.com/foo/bar resolves to "foo" controller, "bar" action with default locale
+        www.myapp.com/fr/foo/bar resolves to "foo" controller, "bar" action with locale => "fr"
 
 *   :host
     Searches for configured matches in the domain name. If a match is found, the configured locale is then checked against I18n.available_locales.
@@ -40,24 +40,24 @@ To specifiy which part of the URL should be matched for the locale identifier, s
     Mappings matching is similar to route config - first match found is used, rest is ignored.
 
     Example:
-      Perfectline::LocaleRouting.create_mapping({
-        "en.dev.*"  => "en", # matches en.dev.yoursite.com and en.dev.mysite.co.uk
-        "*.dev.*"   => "en", # matches foo.dev.yoursite.com and www.dev.yoursite.com but not en.dev.mysite.com as its defined AFTER that mapping
-        "en.*"      => "en", # matches en.yoursite.com but not en.dev.yoursite.com or en.foo.dev.yoursite.com as its defined AFTER that mapping
-        "*.com"     => "en", # matches anything with a .com TLD
-      })
+        Perfectline::LocaleRouting.create_mapping({
+          "en.dev.*"  => "en", # matches en.dev.yoursite.com and en.dev.mysite.co.uk
+          "*.dev.*"   => "en", # matches foo.dev.yoursite.com and www.dev.yoursite.com but not en.dev.mysite.com as its defined AFTER that mapping
+          "en.*"      => "en", # matches en.yoursite.com but not en.dev.yoursite.com or en.foo.dev.yoursite.com as its defined AFTER that mapping
+          "*.com"     => "en", # matches anything with a .com TLD
+        })
 
-# Warning
+## Warning
 This plugin has not been fully tested with all possible cases except perhaps the params locale matching.
 As you can see there are no tests yet either, although they will be created as soon as possible.
 So if you do run into issues or have any improvement ideas, feel free to contact the authors.
 
-# Honorable mentions
+## Honorable mentions
 This plugin is heavily inspired by the "routing-filter" plugin by Sven Fuchs.
 
-# Authors:
+## Authors:
 Tanel Suurhans - tanel.suurhans__at__perfectline__d0t__ee
 Tarmo Lehtpuu - tarmo.lehtpuu__at__perfectline__d0t_ee
 
-# License
+## License
 Copyright 2009 by PerfectLine LLC (www.perfectline.co.uk) and is released under the MIT license.
