@@ -19,7 +19,7 @@ To enable or disable the locale routing set **Perfectline::LocaleRouting.enabled
 To specifiy which part of the URL should be matched for the locale identifier, set **Perfectline::LocaleRouting.match_from = option**
 
 ### Available options for match_from are:
-*   **:params**
+*   **:params**  
     Searches for a 2 letter locale string in the parameters, specifically in the first query stirng token.   
     Found token is matched against I18n.available_locales and if no such locale exists, it will fall back to the default locale.
 
@@ -29,7 +29,7 @@ To specifiy which part of the URL should be matched for the locale identifier, s
         www.myapp.com/foo/bar resolves to "foo" controller, "bar" action with default locale
         www.myapp.com/fr/foo/bar resolves to "foo" controller, "bar" action with locale => "fr"
 
-*   **:host**
+*   **:host**  
     Searches for configured matches in the domain name. If a match is found, the configured locale is then checked against I18n.available_locales.  
     If the configured locale does not exist in available locales, it will fall back to the default locale.
 
