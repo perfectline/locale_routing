@@ -15,8 +15,8 @@ No routes have to be changed to use this functionality.
 
 ## Configuration
 
-To enable or disable the locale routing set **Perfectline::LocaleRouting.enabled = true/false** # defaults to true  
-To specifiy which part of the URL should be matched for the locale identifier, set **Perfectline::LocaleRouting.match_from = option**
+To enable or disable the locale routing set **Perfectline::LocaleRouting::Config.enabled = true/false** # defaults to true
+To specifiy which part of the URL should be matched for the locale identifier, set **Perfectline::LocaleRouting::Config.match_from = option**
 
 ### Available options for match_from are:
 *   **:params**  
@@ -33,13 +33,13 @@ To specifiy which part of the URL should be matched for the locale identifier, s
     Searches for configured matches in the domain name. If a match is found, the configured locale is then checked against I18n.available_locales.  
     If the configured locale does not exist in available locales, it will fall back to the default locale.
 
-    Configuring host to locale mappings is done via **Perfectline::LocaleRouting.create_mapping = hash**.  
+    Configuring host to locale mappings is done via **Perfectline::LocaleRouting::Config.mapping do |block|**.
     Hash key must be the hostname pattern to be matched and value is the locale string.  
     Hostname patterns are like simplified regexp patterns with * wildcard support.  
     Mappings matching is similar to route config - first match found is used, rest is ignored.
 
     Example:
-        Perfectline::LocaleRouting.mapping do |map|
+        Perfectline::LocaleRouting::Config.mapping do |map|
           map.match "en.dev.*", "en", # matches en.dev.yoursite.com and en.dev.mysite.co.uk
           map.match "*.dev.*",  "en", # matches foo.dev.yoursite.com and www.dev.yoursite.com but not en.dev.mysite.com as its defined AFTER that mapping
           map.match "en.*",     "en", # matches en.yoursite.com but not en.dev.yoursite.com or en.foo.dev.yoursite.com as its defined AFTER that mapping

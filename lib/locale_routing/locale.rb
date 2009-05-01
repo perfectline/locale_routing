@@ -25,8 +25,8 @@ module Perfectline
         end
 
         # extract and set locale
-        def extract(path, env)     
-          case Perfectline::LocaleRouting.match_from
+        def extract(path, env)
+          case Perfectline::LocaleRouting::Config.match_from
             when :params    then path = extract_from_params(path)
             when :host      then extract_from_host(env)
           end
@@ -58,7 +58,7 @@ module Perfectline
 
           host = env[:host].to_s
           locale = I18n.default_locale
-          mappings = Perfectline::LocaleRouting.host_mapping
+          mappings = Perfectline::LocaleRouting::Config.host_mapping
 
           if mappings.nil? || mappings.empty?
             RAILS_DEFAULT_LOGGER.warn "Perfectline::LocaleRouting.host_mapping is nil or empty."

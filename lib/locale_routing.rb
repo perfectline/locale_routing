@@ -4,4 +4,4 @@ require 'locale_routing/locale_route_set'
 require 'locale_routing/locale'
 
 # wire up routing hooks
-Perfectline::LocaleRouting.bootstrap
+Perfectline::LocaleRouting::Config.bootstrap
