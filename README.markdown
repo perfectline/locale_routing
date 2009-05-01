@@ -4,8 +4,8 @@ LocaleRouting makes parsing I18N locale from an url parameter seamless.
 It taps into the route recognition and generation methods and checks or adds the locale when nessecary.
 
 The plugin loads its available locales from Rails default I18N class.  
-For every request, it checks if the firs 2 characters of the parameters part in the URL match any of the locale definitions exposed by I18n.available_locales.  
-IF a locale string is found, the application I18n.locale is changed and the locale is passed via params[:locale].
+For every request, it check the configured part the URL match any of the locale definitions exposed by I18n.available_locales.  
+If a locale string is found, the application I18n.locale is changed and the locale is passed via params[:locale].
 
 Access to mapped URLs is wrapped also, the current I18n.locale is always prepended to the generated URLs parameters.  
 Additionally you can pass a {:locale => "en} option to your link helpers, which will inject the given locale into the output URL.
