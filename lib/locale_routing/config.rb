@@ -1,6 +1,16 @@
 module Perfectline
   module LocaleRouting
 
+    class Mapper
+      def initialize(config)
+        @config = config
+      end
+
+      def match(host, locale)
+        @config.add_host_match(host, locale)
+      end
+    end
+
     @locale_match_options = [:params, :host]
     @host_mapping = []
 
@@ -34,14 +44,12 @@ module Perfectline
         @host_mapping
       end
 
-      def create_mapping(hash)
-        unless hash.kind_of?(Hash)
-          raise "Supplied parameter for Perfectline::LocaleRouting.domain_mapping must be a Hash"
-        end
+      def add_host_mapping(host, locale)
+        @host_mapping.push({:host => host.to_s.gsub('.', '\.').gsub('*', '.*'), :locale => locale.to_s})
+      end
 
-        hash.each do |host, locale|
-          @host_mapping.push({:host => host.to_s.gsub('.', '\.').gsub('*', '.*'), :locale => locale.to_s})
-        end
+      def mapping
+        yield Mapper.new(self)
       end
 
       # straps the LocaleRouteSet module into ActionControllers RouteSet

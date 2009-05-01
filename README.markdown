@@ -39,12 +39,12 @@ To specifiy which part of the URL should be matched for the locale identifier, s
     Mappings matching is similar to route config - first match found is used, rest is ignored.
 
     Example:
-        Perfectline::LocaleRouting.create_mapping({
-          "en.dev.*"  => "en", # matches en.dev.yoursite.com and en.dev.mysite.co.uk
-          "*.dev.*"   => "en", # matches foo.dev.yoursite.com and www.dev.yoursite.com but not en.dev.mysite.com as its defined AFTER that mapping
-          "en.*"      => "en", # matches en.yoursite.com but not en.dev.yoursite.com or en.foo.dev.yoursite.com as its defined AFTER that mapping
-          "*.com"     => "en", # matches anything with a .com TLD
-        })
+        Perfectline::LocaleRouting.mapping do |map|
+          map.match "en.dev.*", "en", # matches en.dev.yoursite.com and en.dev.mysite.co.uk
+          map.match "*.dev.*",  "en", # matches foo.dev.yoursite.com and www.dev.yoursite.com but not en.dev.mysite.com as its defined AFTER that mapping
+          map.match "en.*",     "en", # matches en.yoursite.com but not en.dev.yoursite.com or en.foo.dev.yoursite.com as its defined AFTER that mapping
+          map.match "*.com",    "en", # matches anything with a .com TLD
+        end
 
 ## Warning
 This plugin has not been fully tested with all possible cases except perhaps the params locale matching.  
