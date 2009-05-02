@@ -34,7 +34,7 @@ Install the plugin library:
 	sudo gem install perfectline-locale-routing
 
 To include them gem in your application, add this to the bottom of your 'environment.rb' or in an initializer:
-  require 'locale_routing'
+	require 'locale_routing'
  
 ### Install as a plugin via Git
 
