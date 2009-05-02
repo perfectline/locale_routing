@@ -1,6 +1,6 @@
 # LocaleRouting
 
-LocaleRouting makes parsing I18N locale from an url parameter seamless.  
+LocaleRouting makes using I18N locale from an url parameter or hostname seamless.  
 It taps into the route recognition and generation methods and checks or adds the locale when nessecary.
 
 The plugin loads its available locales from Rails default I18N class.  
@@ -12,6 +12,34 @@ Additionally you can pass a {:locale => "en} option to your link helpers, which 
 This parameter defaults to I18n.locale.
 
 No routes have to be changed to use this functionality.
+
+## Installation
+
+There are several different ways to install this plugin.  
+
+### Installing as Rails gem dependency
+
+To add **locale-routing** as a gem dependecy, add this to your 'config/environment.rb' Rails::Initializer.run do |config| block:
+	config.gem 'perfectline-locale-routing', :lib => 'locale-routing', :source => 'http://gems.github.com'
+
+To install this gem (and other missing gem dependencies) run 'rake gems:install'.
+
+### Installing the gem manually
+
+This requires you to have at least RubyGems version 1.2 (run 'gem -v' to check your current version).  
+As the 'locale-routing' gem is built by GitHub, you have to add GitHub as a gem source on your environment (if you havent done it already):
+	sudo gem sources -a http://gems.github.com
+
+Install the plugin library:
+	sudo gem install perfectline-locale-routing
+
+To include them gem in your application, add this to the bottom of your 'environment.rb' or in an initializer:
+  require 'locale_routing'
+ 
+### Install as a plugin via Git
+
+Alternatively you can use 'script/plugin' to export the code into your applications 'vendor/plugins' directory.  
+	'script/plugin install git://github.com/perfectline/locale-routing.git'
 
 ## Configuration
 
