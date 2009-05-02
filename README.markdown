@@ -20,7 +20,7 @@ There are several different ways to install this plugin.
 ### Installing as Rails gem dependency
 
 To add **locale-routing** as a gem dependecy, add this to your 'config/environment.rb' Rails::Initializer.run do |config| block:
-	config.gem 'perfectline-locale-routing', :lib => 'locale-routing', :source => 'http://gems.github.com'
+	config.gem 'perfectline-locale-routing', :lib => 'locale_routing', :source => 'http://gems.github.com'
 
 To install this gem (and other missing gem dependencies) run 'rake gems:install'.
 
