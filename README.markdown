@@ -20,8 +20,8 @@ There are several different ways to install this plugin.
 ### Installing as Rails gem dependency
 
 To add **locale_routing** as a gem dependecy, add this to your `config/environment.rb` like this:
-  Rails::Initializer.run do |config| block
-  ...
+	Rails::Initializer.run do |config| block
+	...
 	  config.gem 'perfectline-locale_routing', :lib => 'locale_routing', :source => 'http://gems.github.com'
 	...
 	end
@@ -47,7 +47,7 @@ Alternatively you can use `script/plugin` to export the code into your applicati
 
 ## Configuration
 
-To enable or disable the locale routing set `Perfectline::LocaleRouting::Config.enabled = true/false # defaults to true`.
+To enable or disable the locale routing set `Perfectline::LocaleRouting::Config.enabled = true/false`.  
 To specifiy which part of the URL should be matched for the locale identifier, set `Perfectline::LocaleRouting::Config.match_from = option`
 
 ### Available options for match_from are:
@@ -87,7 +87,7 @@ So if you do run into issues or have any improvement ideas, feel free to contact
 This plugin is inspired by the "routing-filter" plugin by **Sven Fuchs**.
 
 ## Authors:
-**Tanel Suurhans** - tanel.suurhans_at_perfectline_d0t_ee
+**Tanel Suurhans** - tanel.suurhans_at_perfectline_d0t_ee  
 **Tarmo Lehtpuu** - tarmo.lehtpuu_at_perfectline_d0t_ee
 
 ## License
