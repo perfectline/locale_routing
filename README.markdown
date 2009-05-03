@@ -19,19 +19,19 @@ There are several different ways to install this plugin.
 
 ### Installing as Rails gem dependency
 
-To add **locale-routing** as a gem dependecy, add this to your 'config/environment.rb' Rails::Initializer.run do |config| block:
-	config.gem 'perfectline-locale-routing', :lib => 'locale_routing', :source => 'http://gems.github.com'
+To add **locale_routing** as a gem dependecy, add this to your 'config/environment.rb' Rails::Initializer.run do |config| block:
+	config.gem 'perfectline-locale_routing', :lib => 'locale_routing', :source => 'http://gems.github.com'
 
 To install this gem (and other missing gem dependencies) run 'rake gems:install'.
 
 ### Installing the gem manually
 
 This requires you to have at least RubyGems version 1.2 (run 'gem -v' to check your current version).  
-As the 'locale-routing' gem is built by GitHub, you have to add GitHub as a gem source on your environment (if you havent done it already):
+As the 'locale_routing' gem is built by GitHub, you have to add GitHub as a gem source on your environment (if you havent done it already):
 	sudo gem sources -a http://gems.github.com
 
 Install the plugin library:
-	sudo gem install perfectline-locale-routing
+	sudo gem install perfectline-locale_routing
 
 To include them gem in your application, add this to the bottom of your 'environment.rb' or in an initializer:
 	require 'locale_routing'
@@ -39,7 +39,7 @@ To include them gem in your application, add this to the bottom of your 'environ
 ### Install as a plugin via Git
 
 Alternatively you can use 'script/plugin' to export the code into your applications 'vendor/plugins' directory.  
-	'script/plugin install git://github.com/perfectline/locale-routing.git'
+	'script/plugin install git://github.com/perfectline/locale_routing.git'
 
 ## Configuration
 

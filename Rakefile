@@ -9,10 +9,10 @@ task :default => :test
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |jewel|
-    jewel.name = 'locale-routing'
+    jewel.name = 'locale_routing'
     jewel.summary = 'LocaleRouting makes parsing I18N locale from an url parameters/hostname seamless.'
     jewel.email = 'tanel.suurhans@perfectline.ee'
-    jewel.homepage = 'http://github.com/perfectline/locale-routing/tree/master'
+    jewel.homepage = 'http://github.com/perfectline/locale_routing/tree/master'
     jewel.description = 'A library for configuring/parsin locales from url params or hostname for I18n.'
     jewel.authors = ["Tanel Suurhans", "Tarmo Lehtpuu"]
   end
