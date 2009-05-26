@@ -21,7 +21,13 @@ module Perfectline
           locale = I18n.locale if locale.nil?
 
           # substitute the locale
-          url.sub!(self.match_url){"#{$1}/#{locale}#{$2}"}
+          url.sub!(self.match_url) do
+
+            hostname = $1
+            path = $2 == '/' ? '' : $2
+
+            "#{hostname}/#{locale}#{path}"
+          end
         end
 
         # extract and set locale
