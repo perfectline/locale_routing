@@ -9,12 +9,13 @@ task :default => :test
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |jewel|
-    jewel.name = 'locale_routing'
-    jewel.summary = 'LocaleRouting makes parsing I18N locale from an url parameters/hostname seamless.'
-    jewel.email = 'tanel.suurhans@perfectline.ee'
-    jewel.homepage = 'http://github.com/perfectline/locale_routing/tree/master'
-    jewel.description = 'A library for configuring/parsin locales from url params or hostname for I18n.'
-    jewel.authors = ["Tanel Suurhans", "Tarmo Lehtpuu"]
+    jewel.name          = 'locale_routing'
+    jewel.summary       = 'LocaleRouting makes parsing I18N locale from an url parameters/hostname seamless.'
+    jewel.email         = ['tanel.suurhans@perfectline.ee', "tarmo.lehtpuu@perfectline.ee"]
+    jewel.homepage      = 'http://github.com/perfectline/locale_routing/tree/master'
+    jewel.description   = 'A library for configuring/parsin locales from url params or hostname for I18n.'
+    jewel.files         = FileList["lib/**/*.rb", "*.rb", "MIT-LICENCE", "README.markdown"]
+    jewel.authors       = ["Tanel Suurhans", "Tarmo Lehtpuu"]
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
